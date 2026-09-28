@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Brand Primary & Secondary Palette */
+    --brand-purple: #35063D;
+    --brand-purple-light: #5C2766;
+    --brand-purple-dark: #230329;
+
+    --brand-terracotta: #D27D46;
+    --brand-terracotta-light: #E4BA9F;
+    --brand-terracotta-dark: #A24E26;
+    --brand-terracotta-hover: #C26633;
+
+    --brand-cream: #EFE6D7;
+    --brand-cream-canvas: #FCFAF7;
+    --brand-cream-card: #FAF6EE;
+    --brand-cream-border: #E8DDCA;
+
+    --brand-peach: #B6543B;
+    --brand-burgundy: #76011E;
+    
+    --brand-espresso: #3C2415;
+    --brand-espresso-muted: #796350;
+    --brand-espresso-dark: #27160B;
+
+    --brand-whatsapp: #25D366;
+    --brand-whatsapp-hover: #1EBE5D;
+
+    /* Semantic UI Tokens */
+    --background: var(--brand-cream-canvas);
+    --foreground: var(--brand-espresso);
+    --card: var(--brand-cream-card);
+    --card-foreground: var(--brand-espresso);
+    --popover: var(--brand-cream-canvas);
+    --popover-foreground: var(--brand-espresso);
+    --primary: var(--brand-terracotta);
+    --primary-foreground: #FFFFFF;
+    --secondary: var(--brand-purple);
+    --secondary-foreground: #FFFFFF;
+    --muted: var(--brand-cream);
+    --muted-foreground: var(--brand-espresso-muted);
+    --accent: var(--brand-peach);
+    --accent-foreground: #FFFFFF;
+    --destructive: var(--brand-burgundy);
+    --destructive-foreground: #FFFFFF;
+    --border: var(--brand-cream-border);
+    --input: var(--brand-cream-border);
+    --ring: var(--brand-terracotta);
+    --radius: 1rem;
+  }
+}
+
+@theme {
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-purple-light: var(--brand-purple-light);
+  --color-brand-purple-dark: var(--brand-purple-dark);
+
+  --color-brand-terracotta: var(--brand-terracotta);
+  --color-brand-terracotta-light: var(--brand-terracotta-light);
+  --color-brand-terracotta-dark: var(--brand-terracotta-dark);
+  --color-brand-terracotta-hover: var(--brand-terracotta-hover);
+
+  --color-brand-cream: var(--brand-cream);
+  --color-brand-cream-canvas: var(--brand-cream-canvas);
+  --color-brand-cream-card: var(--brand-cream-card);
+  --color-brand-cream-border: var(--brand-cream-border);
+
+  --color-brand-peach: var(--brand-peach);
+  --color-brand-burgundy: var(--brand-burgundy);
+  --color-brand-espresso: var(--brand-espresso);
+  --color-brand-espresso-muted: var(--brand-espresso-muted);
+  --color-brand-whatsapp: var(--brand-whatsapp);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-serif: var(--font-serif-evantic), 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: var(--font-sans-lufga), 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-script: var(--font-script-signature), 'Caveat', cursive;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom organic wave & blob shape utilities */
+.shape-blob-1 {
+  border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+}
+
+.shape-blob-2 {
+  border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+}
+
+/* Liquid Glass Effects */
+.glass-liquid {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 100%);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25), inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.5);
+}
+
+.glass-liquid-dark {
+  background: linear-gradient(135deg, rgba(20, 15, 12, 0.55) 0%, rgba(10, 8, 6, 0.35) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.glass-liquid-pill {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.10) 100%);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.7), 0 8px 24px -2px rgba(0, 0, 0, 0.3);
+}
+
+.glass-liquid-pill:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0.18) 100%);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 2px 0 rgba(255, 255, 255, 0.9), 0 12px 30px -2px rgba(0, 0, 0, 0.4);
+}

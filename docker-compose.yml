@@ -1,0 +1,55 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: spelloria_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: spelloria_user
+      POSTGRES_PASSWORD: spelloria_secure_password_2026
+      POSTGRES_DB: spelloria_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U spelloria_user -d spelloria_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: spelloria_backend
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://spelloria_user:spelloria_secure_password_2026@postgres:5432/spelloria_db
+      - ENVIRONMENT=production
+      - BACKEND_CORS_ORIGINS=["http://localhost:3000","http://127.0.0.1:3000","http://frontend:3000"]
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/static/uploads:/app/static/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: spelloria_frontend
+    restart: always
+    environment:
+      - NODE_ENV=production
+      - NEXT_PUBLIC_API_URL=http://localhost:8000/api/v1
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/data:/app/data
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
