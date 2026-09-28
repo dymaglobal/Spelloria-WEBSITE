@@ -15,6 +15,7 @@ interface PastryCollectionItem {
   leftImg: string;
   rightImg: string;
   href: string;
+  tier: "small" | "medium" | "hero";
 }
 
 const PASTRIES_COLLECTION: PastryCollectionItem[] = [
@@ -24,27 +25,7 @@ const PASTRIES_COLLECTION: PastryCollectionItem[] = [
     leftImg: "/images/collection-cakes.jpg",
     rightImg: "/images/cake-chocolate-truffle.jpg",
     href: "/category/cakes",
-  },
-  {
-    id: "desserts",
-    name: "Desserts",
-    leftImg: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80",
-    rightImg: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=600&q=80",
-    href: "/category/desserts",
-  },
-  {
-    id: "cappuccino",
-    name: "Cappuccino",
-    leftImg: "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80",
-    rightImg: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80",
-    href: "/category/cappuccino",
-  },
-  {
-    id: "cookies",
-    name: "Cookies",
-    leftImg: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80",
-    rightImg: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
-    href: "/category/cookies",
+    tier: "small",
   },
   {
     id: "pastries",
@@ -52,15 +33,54 @@ const PASTRIES_COLLECTION: PastryCollectionItem[] = [
     leftImg: "/images/croissant-macro-1.jpg",
     rightImg: "/images/croissant-macro-2.jpg",
     href: "/category/pastries",
+    tier: "medium",
   },
   {
-    id: "gift-boxes",
-    name: "Gift Boxes",
-    leftImg: "/images/hero-gift-box.png",
-    rightImg: "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=600&q=80",
-    href: "/category/gift-boxes",
+    id: "cappuccino",
+    name: "Cappuccino",
+    leftImg: "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=600&q=80",
+    rightImg: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=600&q=80",
+    href: "/category/cappuccino",
+    tier: "hero",
+  },
+  {
+    id: "desserts",
+    name: "Desserts",
+    leftImg: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80",
+    rightImg: "https://images.unsplash.com/photo-1569864358642-9d1684040f43?auto=format&fit=crop&w=600&q=80",
+    href: "/category/desserts",
+    tier: "medium",
+  },
+  {
+    id: "cookies",
+    name: "Cookies",
+    leftImg: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=600&q=80",
+    rightImg: "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=600&q=80",
+    href: "/category/cookies",
+    tier: "small",
   },
 ];
+
+const TIER_CONFIG = {
+  small: {
+    image: "w-12 h-8 sm:w-16 sm:h-10 md:w-20 md:h-13 rounded-sm sm:rounded-md",
+    text: "text-lg sm:text-2xl md:text-3xl",
+    gap: "gap-2.5 sm:gap-4 md:gap-5",
+    py: "py-1 sm:py-1.5",
+  },
+  medium: {
+    image: "w-14 h-9 sm:w-20 sm:h-13 md:w-26 md:h-17 rounded-sm sm:rounded-md",
+    text: "text-xl sm:text-3xl md:text-4xl",
+    gap: "gap-3 sm:gap-5 md:gap-6",
+    py: "py-1.5 sm:py-2",
+  },
+  hero: {
+    image: "w-16 h-10 sm:w-24 sm:h-15 md:w-32 md:h-21 rounded-sm sm:rounded-md",
+    text: "text-2xl sm:text-4xl md:text-5xl font-medium",
+    gap: "gap-3.5 sm:gap-6 md:gap-7",
+    py: "py-2 sm:py-2.5",
+  },
+};
 
 interface HomeClientViewProps {
   categories: DBCategory[];
@@ -74,7 +94,7 @@ export default function HomeClientView({
   settings,
 }: HomeClientViewProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
-  const [activePastry, setActivePastry] = useState<string>("pastries");
+  const [activePastry, setActivePastry] = useState<string>("cappuccino");
 
   const filteredProducts =
     selectedCategory === "all"
@@ -190,81 +210,79 @@ export default function HomeClientView({
         </section>
 
         {/* =========================================================================
-            2. THE COLLECTION — SIGNATURE CREATIONS (Aligned Category Section)
+            2. THE COLLECTION — SIGNATURE CREATIONS (Graduated Diamond Silhouette)
             ========================================================================= */}
-        <section id="categories-section" className="bg-[#FAF6F0] py-24 sm:py-32 border-b border-[#EAE3D8]">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <section id="categories-section" className="bg-[#FAF6F0] py-20 sm:py-28 border-b border-[#EAE3D8]">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
             
-            <span className="text-[11px] uppercase tracking-[0.3em] font-semibold text-brand-espresso-muted block">
+            <span className="text-[11px] uppercase tracking-[0.25em] font-medium text-stone-500 block mb-2">
               The Collection
             </span>
 
-            <h2 className="font-serif italic text-3xl sm:text-5xl lg:text-[58px] text-brand-espresso tracking-tight pb-6">
+            <h2 className="font-serif italic text-3xl sm:text-5xl lg:text-[54px] text-stone-900 tracking-tight pb-8 sm:pb-12">
               Explore Our Signature Creations
             </h2>
 
-            {/* Interactive Collection List with Strictly Aligned Flanking Preview Cards */}
-            <div className="pt-6 space-y-6 sm:space-y-8 max-w-4xl mx-auto">
+            {/* Graduated Diamond Structure (Small -> Big -> Small) */}
+            <div className="flex flex-col items-center justify-center space-y-1 sm:space-y-2">
               {PASTRIES_COLLECTION.map((item) => {
                 const isHovered = activePastry === item.id;
+                const tier = TIER_CONFIG[item.tier];
+
                 return (
                   <div
                     key={item.id}
                     onMouseEnter={() => setActivePastry(item.id)}
                     onClick={() => setActivePastry(item.id)}
-                    className="grid grid-cols-[1fr_auto_1fr] items-center gap-2 sm:gap-6 md:gap-8 group cursor-pointer transition-all duration-300 w-full"
+                    className={`inline-flex items-center justify-center ${tier.gap} ${tier.py} group cursor-pointer transition-all duration-300 select-none`}
                   >
-                    {/* Left Flanking Image Preview (Anchored to Right) */}
-                    <div className="flex justify-end">
-                      <div
-                        className={`w-14 h-9 sm:w-24 sm:h-14 md:w-36 md:h-20 rounded-full overflow-hidden transition-all duration-500 shadow-md border-2 border-white ring-1 ring-black/5 shrink-0 ${
-                          isHovered
-                            ? "opacity-100 scale-100 shadow-lg ring-black/10"
-                            : "opacity-25 grayscale-[20%] scale-95"
-                        }`}
-                      >
-                        <img
-                          src={item.leftImg}
-                          alt={`${item.name} presentation`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                    {/* Left Flanking Image */}
+                    <div
+                      className={`${tier.image} overflow-hidden bg-stone-200 transition-all duration-300 shadow-sm shrink-0 ${
+                        isHovered
+                          ? "opacity-100 scale-105 shadow-md ring-1 ring-black/10"
+                          : "opacity-40 grayscale-[10%] group-hover:opacity-75"
+                      }`}
+                    >
+                      <img
+                        src={item.leftImg}
+                        alt={`${item.name} presentation`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
 
-                    {/* Category Title with Highlight Underline */}
-                    <div className="text-center min-w-[180px] sm:min-w-[300px] md:min-w-[380px] px-2 flex justify-center">
+                    {/* Category Title with Snug Solid Underline */}
+                    <div className="text-center px-1 sm:px-2 flex items-center justify-center">
                       <Link
                         href={item.href}
-                        className={`font-serif text-2xl sm:text-4xl md:text-[50px] tracking-tight transition-all duration-300 inline-block relative py-1 ${
+                        className={`font-serif tracking-tight transition-all duration-300 inline-block relative ${tier.text} ${
                           isHovered
-                            ? "text-brand-espresso font-normal"
-                            : "text-brand-espresso/30 font-normal hover:text-brand-espresso/60"
+                            ? "text-stone-950 font-medium"
+                            : "text-stone-400 font-normal hover:text-stone-600"
                         }`}
                       >
-                        <span className="relative inline-block">
+                        <span className="relative inline-block pb-1">
                           {item.name}
                           {isHovered && (
-                            <span className="absolute left-0 right-0 -bottom-1 h-[2.5px] bg-brand-espresso rounded-full transition-all duration-300" />
+                            <span className="absolute left-0 right-0 bottom-0 h-[2px] bg-stone-900 rounded-full transition-all duration-300" />
                           )}
                         </span>
                       </Link>
                     </div>
 
-                    {/* Right Flanking Image Preview (Anchored to Left) */}
-                    <div className="flex justify-start">
-                      <div
-                        className={`w-14 h-9 sm:w-24 sm:h-14 md:w-36 md:h-20 rounded-full overflow-hidden transition-all duration-500 shadow-md border-2 border-white ring-1 ring-black/5 shrink-0 ${
-                          isHovered
-                            ? "opacity-100 scale-100 shadow-lg ring-black/10"
-                            : "opacity-25 grayscale-[20%] scale-95"
-                        }`}
-                      >
-                        <img
-                          src={item.rightImg}
-                          alt={`${item.name} detail`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                    {/* Right Flanking Image */}
+                    <div
+                      className={`${tier.image} overflow-hidden bg-stone-200 transition-all duration-300 shadow-sm shrink-0 ${
+                        isHovered
+                          ? "opacity-100 scale-105 shadow-md ring-1 ring-black/10"
+                          : "opacity-40 grayscale-[10%] group-hover:opacity-75"
+                      }`}
+                    >
+                      <img
+                        src={item.rightImg}
+                        alt={`${item.name} detail`}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                   </div>
                 );
@@ -272,12 +290,12 @@ export default function HomeClientView({
             </div>
 
             {/* "See More" Button */}
-            <div className="pt-14">
+            <div className="pt-10 sm:pt-14">
               <Link
                 href="/menu"
-                className="inline-flex items-center gap-2 border border-brand-espresso/35 hover:border-brand-espresso hover:bg-white px-8 py-2.5 rounded-full text-xs uppercase tracking-widest font-semibold text-brand-espresso transition-all active:scale-95 shadow-2xs"
+                className="inline-flex items-center gap-2 border border-stone-400/80 hover:border-stone-900 hover:bg-stone-900 hover:text-white px-7 py-2 rounded-full text-xs font-medium text-stone-800 tracking-wider transition-all duration-200 active:scale-95 shadow-2xs"
               >
-                <span>Explore Full Menu</span>
+                <span>See More</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </Link>
             </div>
