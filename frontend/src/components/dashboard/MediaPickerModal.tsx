@@ -48,12 +48,6 @@ export function MediaPickerModal({
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    if (isOpen) {
-      fetchMedia();
-    }
-  }, [isOpen]);
-
   const fetchMedia = async () => {
     setLoading(true);
     setError(null);
@@ -63,12 +57,18 @@ export function MediaPickerModal({
       if (data.media) {
         setMediaList(data.media);
       }
-    } catch (err: any) {
+    } catch (_err: any) {
       setError("Failed to fetch media assets");
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      fetchMedia();
+    }
+  }, [isOpen]);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;

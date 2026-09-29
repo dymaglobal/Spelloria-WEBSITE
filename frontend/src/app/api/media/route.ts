@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb, saveDb, logActivity } from "@/lib/db/json-db";
+import { getDb, saveDb, logActivity, getUploadDir } from "@/lib/db/json-db";
 import { DBMediaItem } from "@/lib/db/types";
 import path from "path";
 import fs from "fs";
@@ -59,14 +59,15 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "No files uploaded" }, { status: 400 });
     }
 
-    const uploadDir = path.join(process.cwd(), "public", "images", "uploads");
+    const uploadDir = getUploadDir();
     if (!fs.existsSync(uploadDir)) {
       fs.mkdirSync(uploadDir, { recursive: true });
     }
 
-    let sharp: any;
+    let sharp: any = null;
     try {
-      sharp = require("sharp");
+      const sharpModule = await import("sharp");
+      sharp = sharpModule.default || sharpModule;
     } catch {
       sharp = null;
     }

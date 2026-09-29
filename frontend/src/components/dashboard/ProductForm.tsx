@@ -94,6 +94,10 @@ const STATUS_OPTIONS = [
   "New Arrival",
 ];
 
+function generateWeightId(): string {
+  return `w-${Date.now()}-${Math.random().toString(36).substring(2, 5)}`;
+}
+
 export function ProductForm({ initialData, isEdit = false }: ProductFormProps) {
   const router = useRouter();
   const [categories, setCategories] = useState<CategoryOption[]>([]);
@@ -223,7 +227,7 @@ export function ProductForm({ initialData, isEdit = false }: ProductFormProps) {
   const handleAddWeight = (preset?: string) => {
     const wLabel = preset || "750g";
     const newWeight: WeightOption = {
-      id: `w-${Date.now()}-${Math.random().toString(36).substring(2, 5)}`,
+      id: generateWeightId(),
       weight: wLabel,
       price: price ? Math.round(parseFloat(price) * 1.5) : 899,
       available: true,

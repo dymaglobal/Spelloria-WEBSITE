@@ -28,9 +28,11 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   }, [mounted, isAuthenticated, isLoginPage, router]);
 
   // Close mobile drawer on route change
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setMobileMenuOpen(false);
-  }, [pathname]);
+  }
 
   if (!mounted) {
     return <div className="min-h-screen bg-brand-cream-canvas" />;

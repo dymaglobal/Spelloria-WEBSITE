@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Product } from "@/types";
-import ProductCard from "./ProductCard";
+import ProductCard from "@/components/cards/ProductCard";
 import { Cake } from "lucide-react";
 
 interface ProductGridProps {

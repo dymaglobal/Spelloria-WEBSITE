@@ -4,15 +4,15 @@ services:
     container_name: spelloria_postgres
     restart: always
     environment:
-      POSTGRES_USER: spelloria_user
-      POSTGRES_PASSWORD: spelloria_secure_password_2026
-      POSTGRES_DB: spelloria_db
+      POSTGRES_USER: ${POSTGRES_USER:-spelloria_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-spelloria_dev_pass_2026}
+      POSTGRES_DB: ${POSTGRES_DB:-spelloria_db}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U spelloria_user -d spelloria_db"]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-spelloria_user} -d $${POSTGRES_DB:-spelloria_db}"]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -24,8 +24,8 @@ services:
     container_name: spelloria_backend
     restart: always
     environment:
-      - DATABASE_URL=postgresql+asyncpg://spelloria_user:spelloria_secure_password_2026@postgres:5432/spelloria_db
-      - ENVIRONMENT=production
+      - DATABASE_URL=postgresql+asyncpg://${POSTGRES_USER:-spelloria_user}:${POSTGRES_PASSWORD:-spelloria_dev_pass_2026}@postgres:5432/${POSTGRES_DB:-spelloria_db}
+      - ENVIRONMENT=${ENVIRONMENT:-production}
       - BACKEND_CORS_ORIGINS=["http://localhost:3000","http://127.0.0.1:3000","http://frontend:3000"]
     ports:
       - "8000:8000"

@@ -4,8 +4,27 @@ import { DatabaseSchema, DBProduct, DBCategory, DBMediaItem, DBSiteSettings, DBA
 import { hashPassword } from "./auth-utils";
 import { INITIAL_CATEGORIES, INITIAL_PRODUCTS } from "../constants/initial-data";
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const DB_FILE = path.join(DATA_DIR, "db.json");
+export function getDbFilePath(): string {
+  if (process.env.DB_FILE_PATH) {
+    return process.env.DB_FILE_PATH;
+  }
+  const rootFrontendPath = path.join(process.cwd(), "frontend", "data", "db.json");
+  if (fs.existsSync(rootFrontendPath)) {
+    return rootFrontendPath;
+  }
+  return path.join(process.cwd(), "data", "db.json");
+}
+
+export function getUploadDir(): string {
+  if (process.env.UPLOADS_DIR) {
+    return process.env.UPLOADS_DIR;
+  }
+  const rootFrontendPublic = path.join(process.cwd(), "frontend", "public");
+  if (fs.existsSync(rootFrontendPublic)) {
+    return path.join(rootFrontendPublic, "images", "uploads");
+  }
+  return path.join(process.cwd(), "public", "images", "uploads");
+}
 
 function ensureDirectoryExistence(filePath: string) {
   const dirname = path.dirname(filePath);
@@ -213,26 +232,28 @@ function getInitialData(): DatabaseSchema {
 }
 
 export function getDb(): DatabaseSchema {
-  ensureDirectoryExistence(DB_FILE);
-  if (!fs.existsSync(DB_FILE)) {
+  const dbFile = getDbFilePath();
+  ensureDirectoryExistence(dbFile);
+  if (!fs.existsSync(/*turbopackIgnore: true*/ dbFile)) {
     const data = getInitialData();
-    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf-8");
+    fs.writeFileSync(/*turbopackIgnore: true*/ dbFile, JSON.stringify(data, null, 2), "utf-8");
     return data;
   }
   try {
-    const raw = fs.readFileSync(DB_FILE, "utf-8");
+    const raw = fs.readFileSync(/*turbopackIgnore: true*/ dbFile, "utf-8");
     return JSON.parse(raw);
   } catch (e) {
     console.error("Error reading database file, reinitializing:", e);
     const data = getInitialData();
-    fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf-8");
+    fs.writeFileSync(/*turbopackIgnore: true*/ dbFile, JSON.stringify(data, null, 2), "utf-8");
     return data;
   }
 }
 
 export function saveDb(data: DatabaseSchema): void {
-  ensureDirectoryExistence(DB_FILE);
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), "utf-8");
+  const dbFile = getDbFilePath();
+  ensureDirectoryExistence(dbFile);
+  fs.writeFileSync(/*turbopackIgnore: true*/ dbFile, JSON.stringify(data, null, 2), "utf-8");
 }
 
 export function logActivity(

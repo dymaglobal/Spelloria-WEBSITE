@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ShoppingBag, ChevronDown, Phone, ArrowRight } from "lucide-react";
+import { Menu, X, ShoppingBag, Phone, ArrowRight } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants/site-config";
 
 interface NavbarProps {
@@ -19,22 +19,17 @@ export default function Navbar({ variant = "solid" }: NavbarProps) {
   const isHomepage = pathname === "/";
   // The transparent header style is exclusive to the homepage
   const isTransparentNavbar = isHomepage && variant === "transparent";
+  const isScrolled = !isTransparentNavbar || scrolled;
 
   useEffect(() => {
-    // If not transparent on homepage, always stay solid white
     if (!isTransparentNavbar) {
-      setScrolled(true);
       return;
     }
 
     const handleScroll = () => {
       // Transition between 80px and 100px as specified
       const scrollPos = window.scrollY || document.documentElement.scrollTop || window.pageYOffset || 0;
-      if (scrollPos > 80) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(scrollPos > 80);
     };
 
     // Initial check
@@ -88,7 +83,7 @@ export default function Navbar({ variant = "solid" }: NavbarProps) {
 
   // Determine active visual state:
   // Non-homepage routes are ALWAYS solid white with black text and colored logo
-  const isLightHeader = !isTransparentNavbar || scrolled;
+  const isLightHeader = isScrolled;
   const showDarkMobileElements = isLightHeader || mobileMenuOpen;
 
   return (

@@ -1,5 +1,5 @@
 import { getDb } from "./json-db";
-import { DBProduct, DBCategory, DBSiteSettings, DBMediaItem } from "./types";
+import { DBProduct, DBCategory, DBSiteSettings } from "./types";
 
 /**
  * Single Source of Truth Queries for Frontend & API

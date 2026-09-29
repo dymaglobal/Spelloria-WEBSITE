@@ -40,6 +40,10 @@ export const metadata: Metadata = {
     "Celebration Cakes",
   ],
   metadataBase: new URL("https://spelloria.com"),
+  icons: {
+    icon: "/images/logo-transparent.png",
+    apple: "/images/logo-transparent.png",
+  },
   openGraph: {
     title: "Spelloria Patisserie | Artisanal French Bakery",
     description: "Love, Crafted Beautifully. Handcrafted cakes and desserts.",

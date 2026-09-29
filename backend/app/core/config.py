@@ -14,13 +14,13 @@ class Settings(BaseSettings):
     ENVIRONMENT: str = "development"
     PROJECT_NAME: str = "Spelloria Patisserie API"
     API_V1_STR: str = "/api/v1"
-    SECRET_KEY: str = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
+    SECRET_KEY: str = "change_this_to_a_super_secret_64_character_hex_string_for_production"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24 # 24 hours in dev, 15m in prod
     REFRESH_TOKEN_EXPIRE_DAYS: int = 30
     ALGORITHM: str = "HS256"
 
     # PostgreSQL Database URL
-    DATABASE_URL: str = "postgresql+asyncpg://spelloria_user:spelloria_secure_password_2026@localhost:5432/spelloria_db"
+    DATABASE_URL: str = "postgresql+asyncpg://spelloria_user:change_me_in_production@localhost:5432/spelloria_db"
 
     # CORS
     BACKEND_CORS_ORIGINS: List[str] = [
@@ -36,7 +36,7 @@ class Settings(BaseSettings):
 
     # Initial Admin Seed
     FIRST_SUPERUSER_EMAIL: str = "admin@spelloria.com"
-    FIRST_SUPERUSER_PASSWORD: str = "SpelloriaAdmin2026!"
+    FIRST_SUPERUSER_PASSWORD: str = "ChangeMeInProduction2026!"
     FIRST_SUPERUSER_FULLNAME: str = "Ameen Rahman"
 
 settings = Settings()

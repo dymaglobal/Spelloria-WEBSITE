@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDb, saveDb, logActivity } from "@/lib/db/json-db";
+import { getDb, saveDb, logActivity, getUploadDir } from "@/lib/db/json-db";
 import path from "path";
 import fs from "fs";
 
@@ -20,7 +20,7 @@ export async function DELETE(req: NextRequest, { params }: Params) {
     // Try deleting physical file if it exists in uploads
     if (item.public_url.startsWith("/images/uploads/")) {
       const filename = path.basename(item.public_url);
-      const filePath = path.join(process.cwd(), "public", "images", "uploads", filename);
+      const filePath = path.join(getUploadDir(), filename);
       if (fs.existsSync(filePath)) {
         try {
           fs.unlinkSync(filePath);

@@ -28,16 +28,19 @@ ENV/
 .env
 .env*.local
 .env.production
+!.env.example
 
 # Static upload scratch / OS files
 .DS_Store
 *.pem
 
-# IDE & Editor files
+# IDE & Editor files & local tools
 .vscode/
 .idea/
 *.swp
 *.swo
+.kilo/
 
-# Docker
-.dockerignore
+# TypeScript build info
+*.tsbuildinfo
+next-env.d.ts

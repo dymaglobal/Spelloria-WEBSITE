@@ -10,7 +10,7 @@
       "role": "SUPER_ADMIN",
       "is_active": true,
       "created_at": "2026-09-27T13:15:45.947Z",
-      "last_login_at": "2026-09-28T07:17:11.327Z"
+      "last_login_at": "2026-09-28T15:58:10.438Z"
     }
   ],
   "categories": [
@@ -76,304 +76,6 @@
     }
   ],
   "products": [
-    {
-      "id": "prod-cake-3",
-      "name": "Hazelnut Praline",
-      "slug": "hazelnut-praline-cake",
-      "category_id": "cat-1",
-      "short_description": "Toasted Piedmont hazelnut sponge with golden salted caramel and praline swirl.",
-      "full_description": "Layers of toasted hazelnut Dacquoise and roasted hazelnut mousseline cream, topped with golden caramel drizzle, whole Piedmont hazelnuts, and crispy wafer flakes.",
-      "price": 1399,
-      "discount_price": null,
-      "weight_grams": 500,
-      "weight_options": [
-        {
-          "id": "w-prod-cake-3-1",
-          "weight": "250g",
-          "price": 799,
-          "available": true
-        },
-        {
-          "id": "w-prod-cake-3-2",
-          "weight": "500g",
-          "price": 1399,
-          "available": true
-        },
-        {
-          "id": "w-prod-cake-3-3",
-          "weight": "750g",
-          "price": 1949,
-          "available": true
-        },
-        {
-          "id": "w-prod-cake-3-4",
-          "weight": "1kg",
-          "price": 2499,
-          "available": true
-        }
-      ],
-      "status": "Seasonal",
-      "is_archived": false,
-      "featured": true,
-      "best_seller": false,
-      "available": true,
-      "ingredients": [
-        "Piedmont Hazelnuts",
-        "Fleur de Sel Caramel",
-        "French Butter",
-        "Milk Chocolate Ganache"
-      ],
-      "allergens": [
-        "Dairy",
-        "Gluten",
-        "Eggs",
-        "Nuts"
-      ],
-      "tags": [
-        "Celebration",
-        "Boutique"
-      ],
-      "notes": "Prepared fresh each morning in small batches by our pastry chefs.",
-      "shelf_life": "Best enjoyed within 48 hours. Keep refrigerated at 4°C.",
-      "serving_info": "Serve slightly chilled or at room temperature.",
-      "views_count": 81,
-      "display_order": 3,
-      "cover_image_url": "/images/cake-hazelnut-praline.jpg",
-      "gallery_images": [
-        {
-          "id": "img-prod-cake-3-1",
-          "media_id": "m-prod-cake-3-1",
-          "public_url": "/images/cake-hazelnut-praline.jpg",
-          "display_order": 1,
-          "is_featured": true
-        }
-      ],
-      "created_at": "2026-09-27T13:15:45.948Z",
-      "updated_at": "2026-09-28T08:25:20.729Z",
-      "description": "",
-      "images": [],
-      "meta_title": "Hazelnut Praline  | Spelloria Patisserie",
-      "meta_description": "Toasted Piedmont hazelnut sponge with golden salted caramel and praline swirl."
-    },
-    {
-      "id": "prod-cake-4",
-      "name": "Red Velvet Cake",
-      "slug": "red-velvet-cake",
-      "category_id": "cat-1",
-      "short_description": "Velvety crimson cocoa sponge layered with tangy cream cheese frosting.",
-      "full_description": "Classic Southern-style red velvet cake with subtle cocoa undertones, layered with our signature vanilla cream cheese frosting and dusted with crimson velvet cake crumbs.",
-      "price": 1249,
-      "discount_price": null,
-      "weight_grams": 500,
-      "weight_options": [
-        {
-          "id": "w-prod-cake-4-1",
-          "weight": "250g",
-          "price": 699,
-          "available": true
-        },
-        {
-          "id": "w-prod-cake-4-2",
-          "weight": "500g",
-          "price": 1249,
-          "available": true
-        },
-        {
-          "id": "w-prod-cake-4-3",
-          "weight": "750g",
-          "price": 1749,
-          "available": true
-        },
-        {
-          "id": "w-prod-cake-4-4",
-          "weight": "1kg",
-          "price": 2299,
-          "available": true
-        }
-      ],
-      "status": "Best Seller",
-      "is_archived": false,
-      "featured": true,
-      "best_seller": true,
-      "available": true,
-      "ingredients": [
-        "Dutch Process Cocoa",
-        "Philadelphia Cream Cheese",
-        "Buttermilk",
-        "Pure Vanilla Extract"
-      ],
-      "allergens": [
-        "Dairy",
-        "Gluten",
-        "Eggs"
-      ],
-      "tags": [
-        "Celebration",
-        "Boutique"
-      ],
-      "notes": "Prepared fresh each morning in small batches by our pastry chefs.",
-      "shelf_life": "Best enjoyed within 48 hours. Keep refrigerated at 4°C.",
-      "serving_info": "Serve slightly chilled or at room temperature.",
-      "views_count": 207,
-      "display_order": 4,
-      "cover_image_url": "/images/cake-red-velvet.jpg",
-      "gallery_images": [
-        {
-          "id": "img-prod-cake-4-1",
-          "media_id": "m-prod-cake-4-1",
-          "public_url": "/images/cake-red-velvet.jpg",
-          "display_order": 1,
-          "is_featured": true
-        }
-      ],
-      "created_at": "2026-09-27T13:15:45.948Z",
-      "updated_at": "2026-09-27T13:15:45.948Z"
-    },
-    {
-      "id": "prod-1",
-      "name": "Belgian Noir Cake",
-      "slug": "belgian-noir-cake",
-      "category_id": "cat-1",
-      "short_description": "Rich chocolate layers with creamy ganache.",
-      "full_description": "Our signature Belgian Noir Cake is crafted with 72% dark Valrhona chocolate, layered with silken dark chocolate ganache, infused with bourbon vanilla, and crowned with sculpted chocolate ribbons.",
-      "price": 1499,
-      "discount_price": 1349,
-      "weight_grams": 850,
-      "weight_options": [
-        {
-          "id": "w-prod-1-1",
-          "weight": "250g",
-          "price": 849,
-          "available": true
-        },
-        {
-          "id": "w-prod-1-2",
-          "weight": "500g",
-          "price": 1499,
-          "available": true
-        },
-        {
-          "id": "w-prod-1-3",
-          "weight": "750g",
-          "price": 2099,
-          "available": true
-        },
-        {
-          "id": "w-prod-1-4",
-          "weight": "1kg",
-          "price": 2699,
-          "available": true
-        }
-      ],
-      "status": "Best Seller",
-      "is_archived": false,
-      "featured": true,
-      "best_seller": true,
-      "available": true,
-      "ingredients": [
-        "Belgian Dark Chocolate 72%",
-        "French Butter AOP",
-        "Farm Fresh Heavy Cream",
-        "Organic Pastry Flour",
-        "Pure Vanilla Bean"
-      ],
-      "allergens": [
-        "Dairy",
-        "Gluten",
-        "Eggs"
-      ],
-      "tags": [
-        "Celebration",
-        "Boutique"
-      ],
-      "notes": "Prepared fresh each morning in small batches by our pastry chefs.",
-      "shelf_life": "Best enjoyed within 48 hours. Keep refrigerated at 4°C.",
-      "serving_info": "Serve slightly chilled or at room temperature.",
-      "views_count": 231,
-      "display_order": 5,
-      "cover_image_url": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
-      "gallery_images": [
-        {
-          "id": "img-prod-1-1",
-          "media_id": "m-prod-1-1",
-          "public_url": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80",
-          "display_order": 1,
-          "is_featured": true
-        }
-      ],
-      "created_at": "2026-09-27T13:15:45.948Z",
-      "updated_at": "2026-09-27T13:15:45.948Z"
-    },
-    {
-      "id": "prod-3",
-      "name": "Hazelnut Praline Tart",
-      "slug": "hazelnut-praline-tart",
-      "category_id": "cat-2",
-      "short_description": "Crunchy, creamy and irresistible.",
-      "full_description": "Crisp buttery sablé tart shell filled with slow-cooked hazelnut praline, caramelized Piedmont hazelnuts, and a silky milk chocolate crémeux.",
-      "price": 499,
-      "discount_price": null,
-      "weight_grams": 450,
-      "weight_options": [
-        {
-          "id": "w-prod-3-1",
-          "weight": "Individual (1 pc)",
-          "price": 499,
-          "available": true
-        },
-        {
-          "id": "w-prod-3-2",
-          "weight": "Duo Box (2 pcs)",
-          "price": 949,
-          "available": true
-        },
-        {
-          "id": "w-prod-3-3",
-          "weight": "Party Box (4 pcs)",
-          "price": 1799,
-          "available": true
-        }
-      ],
-      "status": "Best Seller",
-      "is_archived": false,
-      "featured": true,
-      "best_seller": true,
-      "available": true,
-      "ingredients": [
-        "Piedmont Hazelnuts",
-        "Caramelized Sugar",
-        "French Butter AOP",
-        "Single-Origin Milk Chocolate",
-        "Sea Salt Flakes"
-      ],
-      "allergens": [
-        "Dairy",
-        "Gluten",
-        "Eggs",
-        "Nuts"
-      ],
-      "tags": [
-        "Artisanal",
-        "Boutique"
-      ],
-      "notes": "Prepared fresh each morning in small batches by our pastry chefs.",
-      "shelf_life": "Best enjoyed within 48 hours. Keep refrigerated at 4°C.",
-      "serving_info": "Serve slightly chilled or at room temperature.",
-      "views_count": 134,
-      "display_order": 7,
-      "cover_image_url": "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=1200&q=85",
-      "gallery_images": [
-        {
-          "id": "img-prod-3-1",
-          "media_id": "m-prod-3-1",
-          "public_url": "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=1200&q=85",
-          "display_order": 1,
-          "is_featured": true
-        }
-      ],
-      "created_at": "2026-09-27T13:15:45.948Z",
-      "updated_at": "2026-09-27T13:15:45.948Z"
-    },
     {
       "id": "prod-4",
       "name": "Summer Berry Cake",
@@ -517,66 +219,80 @@
       "updated_at": "2026-09-27T13:15:45.948Z"
     },
     {
-      "id": "prod-5",
-      "name": "Signature Cappuccino",
-      "slug": "signature-cappuccino",
-      "category_id": "cat-5",
-      "short_description": "Double espresso extraction paired with micro-textured steamed whole milk and cocoa dust.",
-      "full_description": "Our house roast espresso blend of Ethiopian and Colombian beans extracted to perfection, topped with silky micro-foam and a dusting of dark cocoa.",
-      "price": 249,
-      "discount_price": null,
-      "weight_grams": 250,
+      "id": "prod-1790611359388-uvzs",
+      "name": "RISHAL CAKE",
+      "slug": "rishal-cake",
+      "category_id": "cat-2",
+      "short_description": "dreem cake",
+      "full_description": "",
+      "price": 1000,
+      "discount_price": 500,
+      "weight_grams": 500,
       "weight_options": [
         {
-          "id": "w-prod-5-1",
-          "weight": "Regular (250ml)",
-          "price": 249,
+          "id": "w-1",
+          "weight": "500g",
+          "price": 599,
           "available": true
         },
         {
-          "id": "w-prod-5-2",
-          "weight": "Large (350ml)",
-          "price": 299,
+          "id": "w-2",
+          "weight": "1kg",
+          "price": 90,
           "available": true
         }
       ],
       "status": "Available",
       "is_archived": false,
-      "featured": false,
-      "best_seller": false,
+      "featured": true,
+      "best_seller": true,
       "available": true,
       "ingredients": [
-        "Single-Origin Arabica Espresso",
-        "Micro-steamed Whole Milk",
-        "Single-Origin Cocoa Dust"
+        "French Butter AOP",
+        "Madagascar Vanilla",
+        "baked"
       ],
       "allergens": [
-        "Dairy"
+        "Dairy",
+        "Gluten",
+        "Soy"
       ],
       "tags": [
         "Artisanal",
         "Boutique"
       ],
-      "notes": "Prepared fresh each morning in small batches by our pastry chefs.",
-      "shelf_life": "Best enjoyed within 48 hours. Keep refrigerated at 4°C.",
-      "serving_info": "Serve slightly chilled or at room temperature.",
-      "views_count": 209,
-      "display_order": 10,
-      "cover_image_url": "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80",
-      "gallery_images": [
-        {
-          "id": "img-prod-5-1",
-          "media_id": "m-prod-5-1",
-          "public_url": "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80",
-          "display_order": 1,
-          "is_featured": true
-        }
-      ],
-      "created_at": "2026-09-27T13:15:45.949Z",
-      "updated_at": "2026-09-27T13:15:45.949Z"
+      "notes": "Keep refrigerated below 4°C. Best consumed within 48 hours.",
+      "shelf_life": "5 days 3 Days refrigerated",
+      "serving_info": "Serves 4 to 6",
+      "views_count": 0,
+      "display_order": 3,
+      "cover_image_url": "/images/collection-cakes.jpg",
+      "gallery_images": [],
+      "created_at": "2026-09-28T16:02:39.388Z",
+      "updated_at": "2026-09-28T16:03:26.740Z",
+      "description": "",
+      "images": [],
+      "meta_title": "RISHAL CAKE | Spelloria Patisserie",
+      "meta_description": "dreem cake"
     }
   ],
   "media": [
+    {
+      "id": "med-1790611271350-s92m",
+      "filename": "6db6c21e-7034-4097-994b-fdfe07e7689d.png",
+      "stored_name": "6db6c21e-7034-4097-994b-fdfe07e7689d_1790611271055_0dvy.webp",
+      "mime_type": "image/webp",
+      "file_size_bytes": 196252,
+      "public_url": "/images/uploads/6db6c21e-7034-4097-994b-fdfe07e7689d_1790611271055_0dvy.webp",
+      "width_px": 1312,
+      "height_px": 1199,
+      "alt_text": "6db6c21e-7034-4097-994b-fdfe07e7689d",
+      "tags": [
+        "general",
+        "upload"
+      ],
+      "created_at": "2026-09-28T16:01:11.350Z"
+    },
     {
       "id": "med-1",
       "filename": "hero-cake-clean.png",
@@ -678,6 +394,94 @@
     "footer_copyright": "© 2026 Spelloria Patisserie. All rights reserved."
   },
   "activity_logs": [
+    {
+      "id": "log-1790611406742-vj6yq",
+      "user_name": "Spelloria",
+      "action": "UPDATE",
+      "resource_type": "PRODUCT",
+      "resource_id": "prod-1790611359388-uvzs",
+      "resource_name": "RISHAL CAKE",
+      "details": "Updated product details for RISHAL CAKE",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-28T16:03:26.742Z"
+    },
+    {
+      "id": "log-1790611359390-1vw21",
+      "user_name": "Spelloria",
+      "action": "CREATE",
+      "resource_type": "PRODUCT",
+      "resource_id": "prod-1790611359388-uvzs",
+      "resource_name": "RISHAL CAKE",
+      "details": "Created new product: RISHAL CAKE (rishal-cake)",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-28T16:02:39.390Z"
+    },
+    {
+      "id": "log-1790611127973-3lp8l",
+      "user_name": "Spelloria",
+      "action": "DELETE",
+      "resource_type": "PRODUCT",
+      "resource_id": "prod-3",
+      "resource_name": "Hazelnut Praline Tart",
+      "details": "Permanently deleted product: Hazelnut Praline Tart",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-28T15:58:47.973Z"
+    },
+    {
+      "id": "log-1790611122692-3kc7r",
+      "user_name": "Spelloria",
+      "action": "DELETE",
+      "resource_type": "PRODUCT",
+      "resource_id": "prod-5",
+      "resource_name": "Signature Cappuccino",
+      "details": "Permanently deleted product: Signature Cappuccino",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-28T15:58:42.692Z"
+    },
+    {
+      "id": "log-1790611115891-18b6q",
+      "user_name": "Spelloria",
+      "action": "DELETE",
+      "resource_type": "PRODUCT",
+      "resource_id": "prod-1",
+      "resource_name": "Belgian Noir Cake",
+      "details": "Permanently deleted product: Belgian Noir Cake",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-28T15:58:35.891Z"
+    },
+    {
+      "id": "log-1790611113041-v2lun",
+      "user_name": "Spelloria",
+      "action": "DELETE",
+      "resource_type": "PRODUCT",
+      "resource_id": "prod-cake-4",
+      "resource_name": "Red Velvet Cake",
+      "details": "Permanently deleted product: Red Velvet Cake",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-28T15:58:33.041Z"
+    },
+    {
+      "id": "log-1790611110873-7ghc3",
+      "user_name": "Spelloria",
+      "action": "DELETE",
+      "resource_type": "PRODUCT",
+      "resource_id": "prod-cake-3",
+      "resource_name": "Hazelnut Praline",
+      "details": "Permanently deleted product: Hazelnut Praline",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-28T15:58:30.873Z"
+    },
+    {
+      "id": "log-1790611090441-do9w2",
+      "user_name": "Spelloria",
+      "action": "LOGIN",
+      "resource_type": "AUTH",
+      "resource_id": "user-admin-1",
+      "resource_name": "Spelloria",
+      "details": "Successful administrator login",
+      "ip_address": "127.0.0.1",
+      "created_at": "2026-09-28T15:58:10.441Z"
+    },
     {
       "id": "log-1790583920730-50wez",
       "user_name": "Spelloria",
