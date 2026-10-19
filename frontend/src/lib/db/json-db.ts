@@ -186,7 +186,7 @@ function getInitialData(): DatabaseSchema {
     whatsapp_template:
       "Hello Spelloria,\n\nI would like to order:\n\nProduct: {{product_name}}\nWeight: {{weight}}\nPrice: {{price}}\nQuantity: {{quantity}}\nCustomer Name: {{customer_name}}\nProduct Link: {{url}}\n\nPlease confirm availability.",
     address: "Spelloria House, 14 Rue de Royale, Kozhikode, Kerala, India",
-    instagram_url: "https://instagram.com/spelloria",
+    instagram_url: "https://www.instagram.com/spelloria_patisserie?obrf=MXI0dXQyMTIzOXNhZQ==",
     facebook_url: "https://facebook.com/spelloria",
     youtube_url: "https://youtube.com/@spelloria",
     pinterest_url: "https://pinterest.com/spelloria",

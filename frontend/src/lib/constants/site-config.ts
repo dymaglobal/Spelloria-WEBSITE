@@ -9,7 +9,7 @@ export const SITE_CONFIG = {
   email: "hello@spelloria.in",
   whatsappNumber: "+919876543210",
   address: "Kozhikode, Kerala, India",
-  instagram: "https://instagram.com/spelloria.patisserie",
+  instagram: "https://www.instagram.com/spelloria_patisserie?obrf=MXI0dXQyMTIzOXNhZQ==",
   hours: "Mon – Sun: 9:00 AM – 10:00 PM",
   defaultCategories: [
     { name: "Cakes", slug: "cakes" },
